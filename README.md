@@ -26,3 +26,9 @@ Will do
 1. Add Components to make the look better.
 2. Add Unit Testing with Jest.
 3. Add configuration such as how many hours/minutes tamagotchi sleeps.
+
+Will do in a new branch.
+
+## HOSTING
+
+http://tamagotchi.joung.s3-website-us-west-2.amazonaws.com/
