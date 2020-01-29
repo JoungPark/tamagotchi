@@ -22,15 +22,12 @@ I use **custom hooks** for OOP and debugging.
 
 ### `src/Component/`
 
-Will do
+There is a custom gauge to show progress.
 
 
 ## TODO LIST
 
-1. Add Components to make the look better.
 1. Add configuration such as how many hours/minutes tamagotchi sleeps.
-
-Will do in a new branch.
 
 ## HOSTING
 
@@ -39,3 +36,4 @@ http://tamagotchi.joung.s3-website-us-west-2.amazonaws.com/
 ## UPDATE
 
 1. Add Unit Testing with Jest. (29/Jan/2020)
+1. Add Components to make the look better. (29/Jan/2020)
