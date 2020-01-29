@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const time = {
+export const time = {
   energy: 10,
   poop: 3,
 }
