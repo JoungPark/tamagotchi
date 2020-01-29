@@ -3,8 +3,12 @@
 ## Quick start
 
 1. `npm install`
-2. `npm start`
-3. http://localhost:3000
+1. `npm start`
+1. http://localhost:3000
+
+## Test (Jest)
+
+1. `npm run test`
 
 ## Project Structure
 
@@ -24,11 +28,14 @@ Will do
 ## TODO LIST
 
 1. Add Components to make the look better.
-2. Add Unit Testing with Jest.
-3. Add configuration such as how many hours/minutes tamagotchi sleeps.
+1. Add configuration such as how many hours/minutes tamagotchi sleeps.
 
 Will do in a new branch.
 
 ## HOSTING
 
 http://tamagotchi.joung.s3-website-us-west-2.amazonaws.com/
+
+## UPDATE
+
+1. Add Unit Testing with Jest. (29/Jan/2020)
