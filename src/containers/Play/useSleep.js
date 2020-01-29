@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const time = {
+export const time = {
   awaken: 30,
   dream: 10,
 }

@@ -1,5 +1,6 @@
 export const LifeCycle = {
   EGG: 'EGG',
+  BABY: 'BABY',
   TEEN: 'TEEN',
   ADULT: 'ADULT',
   ELDERLY: 'ELDERLY',

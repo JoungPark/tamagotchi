@@ -5,6 +5,16 @@ import { LifeCycle, Action } from './constants';
 import useSleep from './useSleep';
 import useDigest from './useDigest';
 
+export const config = {
+  maxStress: 100,
+  turnAges : {
+    teen: 10,
+    adult: 20,
+    eldery: 30,
+    dead: 40,
+  }
+}
+
 const initialState = {
   stage: LifeCycle.EGG,
   stress: 0,
@@ -14,10 +24,11 @@ const reducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case Action.HATCH:
-        draft.stage = LifeCycle.TEEN;
+        draft.stage = LifeCycle.BABY;
         break;
       case Action.UPSTAGE:
-        draft.stage = state.stage === LifeCycle.TEEN ? LifeCycle.ADULT :
+        draft.stage = state.stage === LifeCycle.BABY ? LifeCycle.TEEN :
+                    state.stage === LifeCycle.TEEN ? LifeCycle.ADULT :
                     state.stage === LifeCycle.ADULT ? LifeCycle.ELDERLY : LifeCycle.DEAD;
         break;
       case Action.DEAD:
@@ -52,13 +63,14 @@ export default function usePet(props) {
     if (state.stage === LifeCycle.EGG) return;
     if (state.stage === LifeCycle.DEAD) return;
 
-    if (state.stress > 100) {
-      dispatch({type: Action.UPSTAGE});
+    if (state.stress > config.maxStress) {
+      dispatch({type: Action.DEAD});
     }
 
-    if ((state.stage === LifeCycle.TEEN && age > 10) ||
-        (state.stage === LifeCycle.ADULT && age > 20) ||
-        (state.stage === LifeCycle.ELDERLY && age > 30)) {
+    if ((state.stage === LifeCycle.BABY && age > config.turnAges.teen) ||
+        (state.stage === LifeCycle.TEEN && age > config.turnAges.adult) ||
+        (state.stage === LifeCycle.ADULT && age > config.turnAges.eldery) ||
+        (state.stage === LifeCycle.ELDERLY && age > config.turnAges.dead)) {
       dispatch({type: Action.UPSTAGE});
     }
   }, [state, energy, poop, discomfort, age]);
